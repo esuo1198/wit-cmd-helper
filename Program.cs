@@ -182,7 +182,7 @@ namespace wit_cmd_helper
                 path = ReadLineWithCancel().Trim().Trim('"', '\'');
                 dir = Path.GetDirectoryName(path);
                 name = Path.GetFileNameWithoutExtension(path);
-                ext = Path.GetExtension(path);
+                ext = Path.GetExtension(path).ToLower();
                 if (isFolder && Directory.Exists(path)) break;
                 else if (ext == ".wbfs" || ext == ".iso" && File.Exists(path)) break;
             }
